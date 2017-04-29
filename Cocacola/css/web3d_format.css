@@ -1,0 +1,302 @@
+@charset "UTF-8";
+/* CSS Document */
+a:visited {
+    color: white;
+}
+a:link {
+    color: white;
+}
+a:link {
+    outline: 0;
+}
+
+/* Mobile Layout: 480px and below. */
+.gridContainer {    
+    background: #FFF;
+}
+
+#logo {
+	color: #FFF;
+	background-color: rgba(245,0,0,1);
+	position: relative;
+}
+body {
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	color: #3B3B3B;
+	background-color: #FFF;
+	margin: 0px;
+}
+/*---slideMenu---*/
+nav{
+	width:83.7%;
+	text-align:center;
+}
+.menu{
+	text-decoration: none;
+	list-style-type: none;
+	height: 217px;
+	top:-9999px;
+	position:absolute;
+	transition:all .5s ease-in-out;
+	margin-top: 48px;
+	z-index: 999;
+}
+.menu a{
+	color: white;
+	font-size:12px;
+	display:block;
+	padding:8px 0;
+	background: rgba(175,0,0,1);
+	border: 1px solid rgba(245,0,0,1);
+	border-left: 3px solid rgba(245,0,0,1);
+	border-right: 3px solid rgba(245,0,0,1);
+	border-radius:5px;
+}
+.menu a:hover{
+	background: #FFF;
+	color: rgba(175,0,0,1);
+}
+.menu li:last-child a{
+	border-bottom: 2px solid rgba(245,0,0,1);
+}
+.menu-icon{
+	background:rgba(245,0,0,1);
+	color: #FFF;
+	cursor:pointer;
+	float:left;
+	margin: 4px 2px;
+}
+#menuToggle{display:none;}
+#menuToggle:checked ~ .menu{position:absolute; top:0;}
+
+.navigation {
+    display:none;
+}
+.navBtn-all {
+    background-color: #ccc;
+    border: 1px solid #ccc;
+    border-radius: 0;
+    padding: 3px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+.navBtn-all:hover{
+	background-color: #650003; 
+	border: 1px solid black;
+}
+.btn-group-vertical {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    width: 100%;
+}
+.button {
+    background-color: rgba(175,0,0,1);
+    border-radius: 5px;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+}
+.btn-responsive {
+    padding:4px 9px;
+    font-size: 60%;
+    line-height: 1.2;
+}
+.btn-primary {
+	background-color: #2C3EAA; 
+	border-color: #2C3EAA;
+	color: #FFFFFF;
+	text-align: left;
+}
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active,
+.open .dropdown-toggle.btn-primary {
+	background-color: #1E2A99; 
+	border-color: #161F29;
+	color: #FFFFFF;
+}
+.btn-success {
+	background-color: #1BBC9C; 
+	border-color: #1BBC9C;
+	color: #FFFFFF;
+}
+.btn-success:hover,
+.btn-success:focus,
+.btn-success:active,
+.open .dropdown-toggle.btn-success {
+	background-color: #139B7E; 
+	border-color: #139B7E;
+	color: #FFFFFF;
+}
+.btn-default {
+	background-color: #95A5A6; 
+	border-color: #95A5A6;
+	color: #FFFFFF;
+}
+.btn-default:hover,
+.btn-default:focus,
+.btn-default:active,
+.open .dropdown-toggle.btn-default {
+	background-color: #7F9293; 
+	border-color: #74B9BA;
+	color: #FFFFFF;
+}
+#footer {
+	color: #FFF;
+	background-color: rgba(245,0,0,1);
+	position: relative;
+	height: 50px;
+}
+#footerContents a {
+	font-size: 10px;
+	font-weight: bold;
+	font-variant: small-caps;
+	color: #FFF;
+	text-decoration: none;
+	text-align: left;
+	display: block;
+	width: 35px;
+}
+#footerContents ul li {
+	float: left;
+	margin-top:10px;
+}
+#footerContents ul {
+	margin: 0px;
+	padding: 0px;
+	list-style-type: none;
+	position: absolute;
+	top: 10px;
+	left: 20px;
+}
+.pullLeft {
+    float: left;
+    padding-left: 20px;
+    padding-top: 15px;
+    font-size: 10px;
+}
+.pullLeft > p {
+    margin: 0;
+}
+.pullRight {
+    float: right;
+    padding-right: 10px;
+    padding-top: 15px;
+    font-size: 8px;
+}
+
+/* Tablet Layout: 481px to 768px. Inherits styles from: Mobile Layout. */
+
+@media only screen and (min-width: 481px) {
+.menu-icon{
+	margin: 20px 10px;
+}
+nav{
+	width:89%;
+}
+.menu{
+	margin-top: 90px;
+}
+.menu a{
+	font-size:15px;
+	padding:10px 0;
+}
+#header {
+    height: 90px;
+}
+.btn-responsive {
+    padding:4px 9px;
+    font-size:90%;
+    line-height: 1.2;
+}
+.navBtn-success {
+    padding: 7px;
+}
+.navBtn-primary {
+    padding: 7px;
+}
+.button {
+    padding: 8px 8px;
+    font-size: 12px;
+}
+#footer {
+	height: 75px;
+}
+#footerContents a {
+	font-size: 16px;
+	width: 55px;
+}
+.pullLeft {
+    font-size: 15px;
+}
+.pullRight {
+    padding-right: 20px;
+    padding-top: 15px;
+    font-size: 11px;
+}
+}
+
+/* Desktop Layout: 769px to a max of 1232px.  Inherits styles from: Mobile Layout and Tablet Layout. */
+
+@media only screen and (min-width: 769px) {
+.menu-icon{display:none;}
+nav{display:none;}
+#header {
+    height: 150px;
+}
+#header a {
+	font-size: 18px;
+	width: 90px;
+}
+.navigation {
+    width: 100%;
+	display: inline-block;
+}
+.navigation ul {
+    margin: 0px;
+    padding: 0px;
+    list-style-type: none;
+}
+.navigation ul li {
+	display: inline-block;
+}
+.navigation a {
+    color: #FFF;
+    text-decoration: none;
+    display: block;
+}
+.btn-responsive {
+    padding:4px 9px;
+    font-size:110%;
+    line-height: 1.2;
+}
+.navBtn-success {
+    padding: 7px;
+}
+.button {
+    padding: 10px 10px;
+    font-size: 14px;
+}
+#footer {
+	height: 100px;
+}
+#footerContents a {
+	font-size: 20px;
+	width: 75px;
+}
+.pullLeft {
+    float: left;
+    padding-left: 20px;
+    padding-top: 20px;
+    font-size: 16px;
+}
+.pullRight {
+    padding-right: 20px;
+    padding-top: 17px;
+    font-size: 14px;
+}
+}

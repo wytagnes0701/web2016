@@ -1,0 +1,331 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Web3D Applications</title>
+<link rel='stylesheet' type='text/css' href='css/x3dom.css'></link>
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<link href="css/boilerplate.css" rel="stylesheet" type="text/css">
+<link href="css/web_mobile.css" rel="stylesheet" type="text/css">
+<link href="css/web3d_format.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+<script src="js/respond.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<script type='text/javascript' src='http://www.x3dom.org/x3dom/release/x3dom.js'></script>
+<script src="js/extension.js"></script>
+
+</head>
+<body>
+<div class="gridContainer clearfix">
+
+	<div id="fb-root"></div>
+	<script>(function(d, s, id) {
+  	var js, fjs = d.getElementsByTagName(s)[0];
+  	if (d.getElementById(id)) return;
+  	js = d.createElement(s); js.id = id;
+  	js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5";
+  	fjs.parentNode.insertBefore(js, fjs);
+	}(document, 'script', 'facebook-jssdk'));</script>
+
+	<input type="checkbox" id="menuToggle"> 
+    <nav class="menu">
+		<ul> 
+			<li><a href="javascript:swap('home')">Home</a></li>
+			<li><a href="javascript:swap('coke')">Coke</a></li>
+			<li><a href="javascript:swap('sprite')">Sprite</a></li> 
+			<li><a href="javascript:swap('pepper')">Pepper</a></li>
+            <li><a href="javascript:swap('download')">Download</a></li>
+		</ul>
+    </nav>
+         
+<div id="header">
+    	<div id="logo">
+    		<center>
+            	<label for="menuToggle" class="menu-icon"><img src="images/menuIcon.png" width="40px" height="40px"></label>
+	  			<img src="images/logo.png">
+    		</center>
+    	</div>
+    	<center>
+        	<div class="navigation">
+    			<ul> 
+					<li><a href="javascript:swap('home')" class="navBtn-all">Home</a></li>
+					<li><a href="javascript:swap('coke')" class="navBtn-all">Coke</a></li>
+					<li><a href="javascript:swap('sprite')" class="navBtn-all">Sprite</a></li> 
+					<li><a href="javascript:swap('pepper')" class="navBtn-all">Pepper</a></li>
+                    <li><a href="javascript:swap('download')" class="navBtn-all">Download</a></li>
+				</ul>
+			</div>
+        </center>
+</div>
+
+<div id="home">
+	<div id="homeSlideshow">
+		<ul>
+			<li>
+				<img src="images/coke_3D_1400.jpg"/>
+            </li>
+            <li>
+                <img src="images/sprite_3D_1400.jpg">
+            </li>
+            <li>
+                <img src="images/pepper_3D_1400.jpg">
+            </li>
+            <li>
+                <img src="images/product_3D_1400.jpg">
+            </li>
+		</ul>
+	</div>
+    
+    <div id="middle_row">
+    	<center><img src="images/_D_footer.png">
+		<div id="main_text">
+			<h2>Coca Cola Great Britain</h2>
+			<h3>Founded 1886 by Dr J S Pemberton </h3>
+			<p> The Coca‑Cola Company is the world's leading manufacturer, marketer and distributor of non-alcoholic beverage concentrates and syrups, and produces nearly 400 brands. </p>
+		</div></center>
+    </div>
+    
+    <div id="bottom_row">
+    	<center>
+    		<h2>#COCA-COLA VIDEO#</h2>
+    		<iframe src="https://www.youtube.com/embed/UvYuQ4Qyiqc" frameborder="0" allowfullscreen></iframe>
+    		<iframe src="https://www.youtube.com/embed/jUvPuQU-1vQ" frameborder="0" allowfullscreen></iframe>
+		</center>
+	</div>
+</div>
+
+<div id="coke" style="display:none;">
+	<div id="coke_3D_image">
+			<div id="cameraButtons">
+            	<h2>Camera</h2>
+      				<div class="btn-group-vertical">
+                    	<button type="button" class="btn btn-primary btn-responsive">Perspective</button>
+ 				    	<button type="button" class="btn btn-success btn-responsive">Front</button>
+ 				   		<button type="button" class="btn btn-success btn-responsive">Back</button>
+  				  		<button type="button" class="btn btn-success btn-responsive">left</button>
+ 				   		<button type="button" class="btn btn-success btn-responsive">Right</button>
+   				 		<button type="button" class="btn btn-success btn-responsive">Top</button>
+      				</div>
+            </div>
+            <div id="model3d">
+            	<x3d>
+                	<scene>
+                    	<inline nameSpaceName="cCan" mapDEFToID="true" onclick="rotateCan();" url= "x3d/coca_cola/coke_can.x3d"></inline>
+                    </scene>
+                </x3d>
+            </div>
+			<div id="galleryLinks">
+   	    		<p id="cokeDetail"><a href="#top"><img class="galleryBox" src="images/coketicket.jpg"></a></p>
+                	<div id="cokeBox">
+						<button id="closeCoke">x</button>
+    					<center><h2 id="h2box">Coca Cola</h2></center>
+						<h3 id="h3box">Atlanta Beginnings: It was 1886, and in New York Harbour, workers were constructing the Statue of Liberty. Eight hundred miles away, another great American symbol was about to be unveiled. Like many people who change history, John Pemberton, an Atlanta pharmacist, was inspired by simple curiosity. One afternoon, he stirred up a fragrant, caramel-coloured liquid and, when it was done, he carried it a few doors down to Jacobs' Pharmacy. Here, the mixture was combined with carbonated water and sampled by customers who all agreed - this new drink was something special. So Jacobs' Pharmacy put it on sale for five cents (about 3p) a glass.</h3>
+                    	<p><a href="http://www.coca-cola.co.uk/brands/category/coca-cola.html" class="button">Find out more ... </a></p>
+					</div>
+            	<p><a href="javascript:swap('sprite')"><img class="galleryBox" src="images/sprite.jpg"></a></p>
+            	<p><a href="javascript:swap('pepper')"><img class="galleryBox" src="images/dr_pepper.jpg"></a></p>
+            </div>
+	</div>
+    	<div id="galleryLinksMob">
+   	    	<center>
+            	<p><a href="javascript:swap('coke')"><img class="galleryBox" src="images/coca_cola.jpg"></a> 
+            		<a href="javascript:swap('sprite')"><img class="galleryBox" src="images/sprite.jpg"></a>
+            		<a href="javascript:swap('pepper')"><img class="galleryBox" src="images/dr_pepper.jpg"></a></p>
+        	</center>
+        </div>
+        <div id="drinksText">
+        	<h2>Coca Cola</h2>
+    		<p>Atlanta Beginnings: It was 1886, and in New York Harbour, workers were constructing the Statue of Liberty. Eight hundred miles away, another great American symbol was about to be unveiled. Like many people who change history, John Pemberton, an Atlanta pharmacist, was inspired by simple curiosity. One afternoon, he stirred up a fragrant, caramel-coloured liquid and, when it was done, he carried it a few doors down to Jacobs' Pharmacy. Here, the mixture was combined with carbonated water and sampled by customers who all agreed - this new drink was something special. So Jacobs' Pharmacy put it on sale for five cents (about 3p) a glass.</p>
+            <p><a href="http://www.coca-cola.co.uk/brands/category/coca-cola.html" class="button">Find out more ... </a></p>
+        </div>
+        <div id="fb_plugin">
+    		<div class="fb-like" data-href="http://localhost/Web3DLab/WorkingFile/Assignment01/index.html" data-width="100%" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
+        	<div class="fb-comments" data-href="http://localhost/Web3DLab/WorkingFile/Assignment01/index.html" data-width="100%" data-numposts="1"></div>
+    	</div>
+</div>
+
+<div id="sprite" style="display:none;">
+	<div id="sprite_3D_image">
+			<div id="cameraButtons">
+            	<h2>Camera</h2>
+      				<div class="btn-group-vertical">
+                    	<button type="button" class="btn btn-primary btn-responsive">Perspective</button>
+ 				    	<button type="button" class="btn btn-success btn-responsive">Front</button>
+ 				   		<button type="button" class="btn btn-success btn-responsive">Back</button>
+  				  		<button type="button" class="btn btn-success btn-responsive">left</button>
+ 				   		<button type="button" class="btn btn-success btn-responsive">Right</button>
+   				 		<button type="button" class="btn btn-success btn-responsive">Top</button>
+      				</div>
+            </div>
+            <div id="model3d">
+            	<x3d>
+                	<scene>
+                    	<inline nameSpaceName="bottle" mapDEFToID="true" onclick="rotateBottle();" url= "x3d/sprite/bottle.x3d"></inline>
+                    </scene>
+                </x3d>
+            </div>
+			<div id="galleryLinks">
+   	    		<p><a href="javascript:swap('coke')"><img class="galleryBox" src="images/coca_cola.jpg"></a></p>
+            	<p id="spriteDetail"><a href="#top"><img class="galleryBox" src="images/spriteticket.jpg"></a></p>
+                	<div id="spriteBox">
+						<button id="closeSprite">x</button>
+    					<center><h2 id="h2box">Sprite</h2></center>
+						<h3 id="h3box">First introduced in 1961, crisp, refreshing, clean-tasting Sprite is now the world's leading lemon and lime flavoured soft drink and is sold in more than 190 different countries. Sprite Zero, part of our no sugar Zero range, offers the delicious lemon lime taste of Sprite without the sugar or calories.</h3>
+                    	<p><a href="http://www.coca-cola.co.uk/brands/category/sprite.html" class="button">Find out more ... </a></p>
+					</div>
+            	<p><a href="javascript:swap('pepper')"><img class="galleryBox" src="images/dr_pepper.jpg"></a></p>
+            </div>
+		</div>
+        <div id="galleryLinksMob">
+   	    	<center>
+            	<p><a href="javascript:swap('coke')"><img class="galleryBox" src="images/coca_cola.jpg"></a> 
+            		<a href="javascript:swap('sprite')"><img class="galleryBox" src="images/sprite.jpg"></a>
+            		<a href="javascript:swap('pepper')"><img class="galleryBox" src="images/dr_pepper.jpg"></a></p>
+        	</center>
+        </div>
+        <div id="drinksText">
+        	<h2>Sprite</h2>
+    		<p>First introduced in 1961, crisp, refreshing, clean-tasting Sprite is now the world's leading lemon and lime flavoured soft drink and is sold in more than 190 different countries. Sprite Zero, part of our no sugar Zero range, offers the delicious lemon lime taste of Sprite without the sugar or calories.</p>
+    		<p><a href="http://www.coca-cola.co.uk/brands/category/sprite.html" class="button">Find out more ...</a></p>
+        </div>
+        <div id="fb_plugin">
+    		<div class="fb-like" data-href="http://localhost/Web3DLab/WorkingFile/Assignment01/index.html" data-width="100%" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
+        	<div class="fb-comments" data-href="http://localhost/Web3DLab/WorkingFile/Assignment01/index.html" data-width="100%" data-numposts="1"></div>
+    	</div>
+</div>
+
+<div id="pepper" style="display:none;">
+	<div id="pepper_3D_image">
+			<div id="cameraButtons">
+            	<h2>Camera</h2>
+      				<div class="btn-group-vertical">
+                    	<button type="button" class="btn btn-primary btn-responsive">Perspective</button>
+ 				    	<button type="button" class="btn btn-success btn-responsive">Front</button>
+ 				   		<button type="button" class="btn btn-success btn-responsive">Back</button>
+  				  		<button type="button" class="btn btn-success btn-responsive">left</button>
+ 				   		<button type="button" class="btn btn-success btn-responsive">Right</button>
+   				 		<button type="button" class="btn btn-success btn-responsive">Top</button>
+      				</div>
+            </div>
+            <div id="model3d">
+            	<x3d>
+                	<scene>
+                    	<inline nameSpaceName="cup" mapDEFToID="true" onclick="rotateCup();" url= "x3d/dr_pepper/cup.x3d"></inline>
+                    </scene>
+                </x3d>
+            </div>
+			<div id="galleryLinks">
+   	    		<p><a href="javascript:swap('coke')"><img class="galleryBox" src="images/coca_cola.jpg"></a></p> 
+            	<p><a href="javascript:swap('sprite')"><img class="galleryBox" src="images/sprite.jpg"></a></p>
+            	<p id="pepperDetail"><a href="#top"><img class="galleryBox" src="images/pepperticket.jpg"></a></p>
+                	<div id="pepperBox">
+						<button id="closePepper">x</button>
+    					<center><h2 id="h2box">Dr Pepper</h2></center>
+						<h3 id="h3box">Dr Pepper's unique, sparkling blend of 23 fruit flavours has been around for well over a century and it's still the same, with that distinctive flavour you just can't quite put your tongue on. It was created by Texas pharmacist Charles Alderton in 1885. He gave a sample of the first ever batch to Wade Morrison, a local shop owner, and Mr Morrison instantly agreed to stock the drink.</h3>
+                    	<p><a href="http://www.coca-cola.co.uk/drinks/dr-pepper/dr-pepper/" class="button">Find out more ... </a></p>
+					</div>
+            </div>
+		</div>
+        <div id="galleryLinksMob">
+   	    	<center>
+            	<p><a href="javascript:swap('coke')"><img class="galleryBox" src="images/coca_cola.jpg"></a> 
+            		<a href="javascript:swap('sprite')"><img class="galleryBox" src="images/sprite.jpg"></a>
+            		<a href="javascript:swap('pepper')"><img class="galleryBox" src="images/dr_pepper.jpg"></a></p>
+        	</center>
+        </div>
+        <div id="drinksText">
+        	<h2>Dr Pepper</h2>
+    		<p>Dr Pepper's unique, sparkling blend of 23 fruit flavours has been around for well over a century and it's still the same, with that distinctive flavour you just can't quite put your tongue on. It was created by Texas pharmacist Charles Alderton in 1885. He gave a sample of the first ever batch to Wade Morrison, a local shop owner, and Mr Morrison instantly agreed to stock the drink.</p>
+    		<p><a href="http://www.coca-cola.co.uk/drinks/dr-pepper/dr-pepper/" class="button">Find out more ...</a></p>
+        </div>
+        <div id="fb_plugin">
+    		<div class="fb-like" data-href="http://localhost/Web3DLab/WorkingFile/Assignment01/index.html" data-width="100%" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
+        	<div class="fb-comments" data-href="http://localhost/Web3DLab/WorkingFile/Assignment01/index.html" data-width="100%" data-numposts="1"></div>
+    	</div>
+</div>
+
+<div id="download" style="display:none;">
+	<div id="product_3D_image">
+		<div id="downText">
+        	<center><h3>Download</h3></center>
+       		<a href="download/bottle.WRL" download><h4>Sprite Bottle VRML (bottle.WRL)</h4></a>
+            <a href="download/sprite_texture_final.jpg" download><h4>Sprite Bottle VRML texture (sprite_texture_final.jpg)</h4></a>
+            <a href="download/StatementOfOriginality.pdf"><h4>Statement Of Originality</h4></a>
+   			<a href="download/Reference.pdf"><h4>Reference</h4></a>
+       	</div>
+	</div>
+</div>
+
+<div id="footer">
+	<div class="pullLeft">
+    	<div id="footerContents">
+    		<ul>
+      			<li id="about"><a href="#bottom">About</a></li>
+                <li id="site"><a href="#bottom">Site</a></li>
+      			<li id="ref"><a href="#top">Reference</a></li>
+    		</ul>
+		</div>
+    </div>
+    <div class="pullRight">
+    	<a href="https://www.facebook.com/cocacolaGB/?brand_redir=40796308305"><i class="fa fa-facebook-square fa-2x"></i></a>
+        <a href="https://twitter.com/cocacola_gb"><i class="fa fa-twitter fa-2x"></i></a>
+        <a href="https://plus.google.com/"><i class="fa fa-google-plus fa-2x"></i></a>
+    </div>
+</div>
+
+<div id="aboutBox">
+	<button id="closeAbout">x</button>
+    <center><h2 id="h2box">Statement of Originality</h2></center>
+	<h3 id="h3box">These web pages are submitted as part requirement for the degree of BSc Computing for Digital Media at the University of Sussex. They are the product of my own labour except where indicated in the web page content. These web pages or contents may be freely copied and distributed provided the source is acknowledged.</h3>
+</div>
+<div id="siteBox">
+	<button id="closeSite">x</button>
+    <center><h2 id="h2box">Site</h2></center>
+    <div>
+    	<center><iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d10072.78269409583!2d-0.09147823016357418!3d50.864577140311845!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487588ca9b7c1b1b%3A0x7b4ba124cd6ad273!2sUniversity+of+Sussex!5e0!3m2!1sen!2suk!4v1457363518353" frameborder="0" style="border:0" allowfullscreen>
+        </iframe></center>
+	</div> 
+</div>
+<div id="refBox">
+	<button id="closeRef">x</button>
+    <center><h2 id="h2box">Reference</h2></center>
+    <h3 id="h3box">Martin White, Web 3D Applications, University of Sussex, 2016</h3>
+	<h3 id="h3box">n.a. (n.d). <i>banner_sprite_slider1.jpg [Online Image].</i> Available at: http://www.sprite.com.ec/es/
+home/. Last Access: 2nd March 2016</h3>
+    <h3 id="h3box">n.a. (n.d). <i>barcode.jpg [Online Image].</i> Available: http://heppg.de/ikg/wordpress/?p=390. Last
+Access: 2nd March 2016</h3>
+	<h3 id="h3box">n.a. (n.d). <i>CocaColaProducts.jpg [Online Image].</i> Available at: http://www.thedrum.com/news/
+2014/04/03/coca-cola-appoints-citypress-handle-uk-pr. Last Access: 2nd March 2016</h3>
+	<h3 id="h3box">n.a. (n.d). <i>Coke+Disc.jpg [Online Image].</i> Available: http://logos.wikia.com/wiki/Coca-Cola. Last
+Access: 7th March 2016</h3>
+    <h3 id="h3box">n.a. (n.d). <i>Dr.-Pepper-Bottles.gif [Online Image].</i> Available at: http://www.theinstargroup.com/blog/
+2011/11/14/dr-pepper-ten-product-line-extensions/. Last Access: 2nd March 2016</h3>
+	<h3 id="h3box">n.a. (n.d). <i>DrPepper_logo.png [Online Image].</i> Available: http://zagmarketing.com/about-us/clientexperience.html.
+Last Access: 7th March 2016</h3>
+    <h3 id="h3box">n.a. (n.d). <i>go-to-coca-cola-journey-home-page1.png [Online Image].</i> Available at: http://www.cocacola.co.uk/.
+Last Access: 1st March 2016</h3>
+    <h3 id="h3box">n.a. (n.d). <i>IMG_3981.png [Online Image].</i> Available at: https://ssos.smemarkethub.com/products/
+39641/dr-pepper-23-12-in-a-pack/. Last Access: 14th Feb 2016</h3>
+	<h3 id="h3box">n.a. (n.d). <i>SPRITE.png [Online Image].</i> Available: http://soda-drinks.wikia.com/wiki/
+File:SPRITE.png. Last Access: 7th March 2016</h3>
+    <h3 id="h3box">n.a. (n.d). <i>sprite-375ml-nip-july-2013.png [Online Image].</i> Available: http://www.photonesta.com/
+diet-sprite-zero-nutrition-facts.html. Last Access: 2nd March 2016</h3>
+    <h3 id="h3box">n.a. (n.d). <i>1446473384525.jpg [Online Image].</i> Available at: http://www.coca-colacompany.com/
+brands/sprite/. Last Access: 14th Feb 2016</h3>
+    <h3 id="h3box">n.a. (n.d). <i>_D_footer.png [Online Image].</i> Available at: https://www.happiness.coca-cola.com/uk/en/
+home. Last Access: 2nd March 2016</h3>
+    <h3 id="h3box">S A Bokhari. (2014). <i>How to Create Slide In/Out Navigation Simply Using HTML & CSS. [Online
+Video].</i> 30 June 2014. Available from: https://www.youtube.com/watch?v=uyT3NSHhke8&list=LLTtbXdYAFRkzBenhoBkj3w&index=11.
+Last Access: 1st March 2016</h3>
+    <h3 id="h3box"><i>SierraLeoneHeritage.org.</i> n.d. Available: http://www.sierraleoneheritage.org/. Last Access: 2nd
+March 2016</h3>
+	<h3 id="h3box">The Coca-Cola Co.. (2016). <i>New Look for Coca-Cola. [Online Video].</i> 28th Feb. Available at: https://www.youtube.com/watch?time_continue=1&v=UvYuQ4Qyiqc. Last access: 8th March 2016.</h3>
+    <h3 id="h3box">The Coca-Cola Co.. (2016). <i>‘Taste the Feeling’ Media Event. [Online Video].</i> 20th Jan. Available at: https://www.youtube.com/watch?v=jUvPuQU-1vQ. Last access: 8th March 2016.</h3>
+</div>
+
+</div>
+</body>
+</html>
